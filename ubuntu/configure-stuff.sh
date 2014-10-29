@@ -6,17 +6,17 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 echo "Setting default shell for $(whoami) to zsh..."
 chsh -s $(which zsh) $(whoami)
 
-# download dracula theme for zsh
-echo "git clone https://github.com/zenorocha/dracula-theme/ $DIR/dracula"
-git clone https://github.com/zenorocha/dracula-theme/ $DIR/dracula
+# download yan theme for zsh
+echo "Cloning yan oh-my-zsh theme from github..."
+git clone https://github.com/vieiralucas/yan/ $DIR/yan
 
-# cp dracula theme to oh-my-zsh's theme folder
-echo "cp $DIR/dracula/zsh/dracula.zsh-theme ~/.oh-my-zsh/themes/dracula.zsh-theme"
-cp $DIR/dracula/zsh/dracula.zsh-theme ~/.oh-my-zsh/themes/dracula.zsh-theme
+# cp yan theme to oh-my-zsh's theme folder
+echo "Copying yan.zsh-theme to ~/.oh-my-zsh/themes/yan.zsh-theme..."
+cp $DIR/yan/yan.zsh-theme ~/.oh-my-zsh/themes/yan.zsh-theme
 
-# remove downloaded dracula theme
-echo "rm -rf $DIR/dracula"
-rm -rf $DIR/dracula
+# remove downloaded yan theme
+echo "Removing yan repo..."
+rm -rf $DIR/yan
 
 # install zshrc
 echo "Copying .zshrc file to $(whoami)'s home directory..."
