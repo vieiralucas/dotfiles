@@ -4,3 +4,5 @@ alias c="clear"
 alias e="exit"
 alias psa="ps aux"
 alias psag="ps aux | grep"
+alias k9="kill -9"
+
