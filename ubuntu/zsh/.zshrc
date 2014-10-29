@@ -78,3 +78,7 @@ export PATH="/home/lucas/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+if [[ -f ~/.aliases ]]; then
+    . ~/.aliases
+fi
