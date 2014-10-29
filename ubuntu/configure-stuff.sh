@@ -3,7 +3,7 @@
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 # set zsh to the default shell
-echo "chsh -s $(which zsh) $(whoami)"
+echo "Setting default shell for $(whoami) to zsh..."
 chsh -s $(which zsh) $(whoami)
 
 # download dracula theme for zsh
@@ -19,13 +19,13 @@ echo "rm -rf $DIR/dracula"
 rm -rf $DIR/dracula
 
 # install zshrc
-echo "cp $DIR/zsh/.zshrc ~/.zshrc"
-cp $DIR/zsh/.zshrc ~/.zshrc
+echo "Copying .zshrc file to $(whoami)'s home directory..."
+cp $DIR/../zsh/.zshrc ~/.zshrc
 
 # install terminator's config
-echo "cp $DIR/terminator/config ~/.config/terminator/config"
+echo "Copying terminator config file to $(whoami)'s terminator config directory..."
 cp $DIR/terminator/config ~/.config/terminator/config
 
 # copy aliases to ~/.aliases
-echo "cp $DIR/.aliases ~/.aliases"
+echo "Copying .aliases to $(whoami)'s home folder..."
 cp $DIR/.aliases ~/.aliases
