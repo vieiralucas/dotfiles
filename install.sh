@@ -3,7 +3,7 @@
 if [[ $# -eq 0 ]]; then
     echo "Please inform the OS"
     echo "Options are: 'ubuntu'"
-    echo "Example: 'install ubuntu'"
+    echo "Example: 'install.sh ubuntu'"
     exit 1
 fi
 
