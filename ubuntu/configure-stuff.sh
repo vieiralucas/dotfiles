@@ -12,7 +12,7 @@ git clone https://github.com/zenorocha/dracula-theme/ $DIR/dracula
 
 # cp dracula theme to oh-my-zsh's theme folder
 echo "cp $DIR/dracula/zsh/dracula.zsh-theme ~/.oh-my-zsh/themes/dracula.zsh-theme"
-cp $DIR/dracula/zsh/dracula.zsh-theme ~/.oh-my-zsh/themes/dracula.zsh-them
+cp $DIR/dracula/zsh/dracula.zsh-theme ~/.oh-my-zsh/themes/dracula.zsh-theme
 
 # remove downloaded dracula theme
 echo "rm -rf $DIR/dracula"
@@ -25,3 +25,7 @@ cp $DIR/zsh/.zshrc ~/.zshrc
 # install terminator's config
 echo "cp $DIR/terminator/config ~/.config/terminator/config"
 cp $DIR/terminator/config ~/.config/terminator/config
+
+# copy aliases to ~/.aliases
+echo "cp $DIR/.aliases ~/.aliases"
+cp $DIR/.aliases ~/.aliases
