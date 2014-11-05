@@ -5,4 +5,4 @@ alias e="exit"
 alias psa="ps aux"
 alias psag="ps aux | grep"
 alias k9="kill -9"
-
+alias chrome="google-chrome-stable
