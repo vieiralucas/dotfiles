@@ -23,6 +23,7 @@ echo "Copying .zshrc file to $(whoami)'s home directory..."
 cp $DIR/../zsh/.zshrc ~/.zshrc
 
 # install terminator's config
+echo "Installing terminator's config file..."
 bash $DIR/terminator/install.sh
 
 # copy aliases to ~/.aliases
