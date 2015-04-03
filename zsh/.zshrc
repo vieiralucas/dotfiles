@@ -82,3 +82,11 @@ alias zshconfig="vim ~/.zshrc"
 if [[ -f ~/.aliases ]]; then
     . ~/.aliases
 fi
+
+# source rvm
+[[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+
+#export nvm
+export NVM_DIR="$HOME/.nvm"
+#source nvm
+source $HOME/.nvm/nvm.sh
