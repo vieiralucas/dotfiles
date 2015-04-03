@@ -29,3 +29,7 @@ bash $DIR/terminator/install.sh
 # copy aliases to ~/.aliases
 echo "Copying .aliases to $(whoami)'s home folder..."
 cp $DIR/.aliases ~/.aliases
+
+# source .zshrc
+echo "Source .zshrc"
+source ~/.zshrc

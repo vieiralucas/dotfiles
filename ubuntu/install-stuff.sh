@@ -8,7 +8,7 @@ sudo add-apt-repository ppa:webupd8team/sublime-text-3
 echo "Updating packages..."
 sudo apt-get update > /dev/null
 
-# install programs
+# Install stuff
 echo "Installing htop..."
 sudo apt-get install -y htop > /dev/null
 echo "Installing traceroute..."
@@ -25,8 +25,9 @@ echo "Installing git..."
 sudo apt-get install -y git > /dev/null
 echo "Installing sublime-text-3..."
 sudo apt-get install -y sublime-text-installer > /dev/null
-
-# install oh-my-zsh
+echo "Installing nvm"
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install.sh | bash > /dev/null
+echo "Installing rvm"
+curl -sSL https://get.rvm.io | bash -s stable --ruby
 echo "Installing oh-my-zsh"
 wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh > /dev/null
-
