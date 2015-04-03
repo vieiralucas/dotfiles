@@ -6,3 +6,4 @@ alias psa="ps aux"
 alias psag="ps aux | grep"
 alias k9="kill -9"
 alias chrome="google-chrome-stable"
+alias gdub='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
