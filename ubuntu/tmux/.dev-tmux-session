@@ -1,0 +1,3 @@
+new-session -s dev -n ide
+split-window -v -p 30 -t dev
+split-window -h -p 50 -t dev

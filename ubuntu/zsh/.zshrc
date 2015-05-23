@@ -80,13 +80,18 @@ alias zshconfig="vim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 if [[ -f ~/.aliases ]]; then
-    . ~/.aliases
+    source ~/.aliases
 fi
 
 # source rvm
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
-#export nvm
+# export nvm
 export NVM_DIR="$HOME/.nvm"
-#source nvm
+# source nvm
 source $HOME/.nvm/nvm.sh
+
+if [[ -f ~/.local.sh ]]; then
+    source ~/.local.sh
+fi
+

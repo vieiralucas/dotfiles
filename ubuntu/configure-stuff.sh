@@ -20,11 +20,7 @@ rm -rf $DIR/yan
 
 # install zshrc
 echo "Copying .zshrc file to $(whoami)'s home directory..."
-cp $DIR/../zsh/.zshrc ~/.zshrc
-
-# install terminator's config
-echo "Installing terminator's config file..."
-bash $DIR/terminator/install.sh
+cp $DIR/zsh/.zshrc ~/.zshrc
 
 # copy aliases to ~/.aliases
 echo "Copying .aliases to $(whoami)'s home folder..."
