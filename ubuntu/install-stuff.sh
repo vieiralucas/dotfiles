@@ -2,6 +2,9 @@
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
+# add ppas
+sudo add-apt-repository ppa:webupd8team/unstable
+
 # update packages
 echo "Updating packages..."
 sudo apt-get update > /dev/null
