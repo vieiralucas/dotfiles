@@ -7,6 +7,8 @@ echo "Updating packages..."
 sudo apt-get update > /dev/null
 
 # Install stuff
+echo "Installing guake..."
+sudo apt-get install -y guake > /dev/null
 echo "Installing htop..."
 sudo apt-get install -y htop > /dev/null
 echo "Installing traceroute..."
