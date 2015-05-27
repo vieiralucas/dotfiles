@@ -18,6 +18,8 @@ echo "Installing traceroute..."
 sudo apt-get install -y traceroute > /dev/null
 echo "Installing curl..."
 sudo apt-get install -y curl > /dev/null
+echo "Installing xclip..."
+sudo apt-get install -y xclip > /dev/null
 echo "Installing zsh..."
 sudo apt-get install -y zsh > /dev/null
 echo "Installing git..."
