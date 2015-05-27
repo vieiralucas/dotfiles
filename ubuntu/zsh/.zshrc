@@ -95,3 +95,4 @@ if [[ -f ~/.local.sh ]]; then
     source ~/.local.sh
 fi
 
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
