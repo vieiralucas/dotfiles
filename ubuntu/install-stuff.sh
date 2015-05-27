@@ -27,3 +27,7 @@ echo "Installing oh-my-zsh"
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh > /dev/null
 echo "Installing gnome-terminal-colors-monokai"
 sh $DIR/terminal-colors/install.sh
+echo "Installing atom.io"
+wget https://atom.io/download/deb -O atom.deb > /dev/null
+sudo dpkg -i atom.deb
+rm atom.deb
