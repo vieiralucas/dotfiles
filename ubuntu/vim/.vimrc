@@ -20,6 +20,15 @@ Plugin 'digitaltoad/vim-jade'
 " Go vim
 Plugin 'fatih/vim-go'
 
+" colorschemes
+Plugin 'chriskempson/base16-vim'
+
+" fugitive
+Plugin 'tpope/vim-fugitive'
+
+" vim-airline
+Plugin 'bling/vim-airline'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -48,11 +57,17 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" 256 colors
+set t_Co=256
+
 " line numbers
 set number
 
 " access system clipboard
 set clipboard=unnamed
+
+" show the status line all the time
+set laststatus=2
 
 " toggle invisible characters
 set invlist
@@ -66,4 +81,7 @@ set showbreak=↪
 set backupdir=/tmp//
 set directory=/tmp//
 
-
+" vim-airline
+let g:airline_powerline_fonts=1
+let g:airline_theme='molokai'
+let g:airline#extensions#tabline#enabled=1

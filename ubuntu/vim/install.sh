@@ -15,3 +15,6 @@ cp $DIR/monokai.vim ~/.vim/colors/monokai.vim
 
 # copy vimrc
 cp $DIR/.vimrc ~/.vimrc
+
+# install powerline fonts
+/bin/bash $DIR/fonts/install.sh
