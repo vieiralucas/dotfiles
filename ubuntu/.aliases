@@ -8,3 +8,4 @@ alias k9="kill -9"
 alias chrome="google-chrome-stable"
 alias gdub='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias gcam="git commit -am"
+alias hosts="sudo vim /etc/hosts"
