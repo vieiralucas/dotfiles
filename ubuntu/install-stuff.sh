@@ -5,6 +5,9 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 # add ppas
 sudo add-apt-repository ppa:webupd8team/unstable
 
+# create bub dir
+mkdir -p $HOME/bin
+
 # update packages
 echo "Updating packages..."
 sudo apt-get update > /dev/null
@@ -38,3 +41,5 @@ echo "Installing atom.io"
 wget https://atom.io/download/deb -O atom.deb > /dev/null
 sudo dpkg -i atom.deb
 rm atom.deb
+echo "Installing leiningen for clojure"
+curl https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -o $HOME/bin/lein

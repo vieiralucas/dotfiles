@@ -83,6 +83,10 @@ if [[ -f ~/.aliases ]]; then
     source ~/.aliases
 fi
 
+if [[ -d ~/bin ]]; then
+    PATH="$PATH:$HOME/bin"
+fi
+
 # source rvm
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 
