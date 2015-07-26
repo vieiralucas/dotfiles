@@ -97,8 +97,8 @@ source $HOME/.nvm/nvm.sh
 
 # Go lang stuff
 export GOROOT=$HOME/.go
-export PATH=$PATH:$GOROOT/bin
 export GOPATH=$HOME/go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 if [[ -f ~/.local.sh ]]; then
     source ~/.local.sh
