@@ -95,6 +95,11 @@ export NVM_DIR="$HOME/.nvm"
 # source nvm
 source $HOME/.nvm/nvm.sh
 
+# Go lang stuff
+export GOROOT=$HOME/.go
+export PATH=$PATH:$GOROOT/bin
+export GOPATH=$HOME/go
+
 if [[ -f ~/.local.sh ]]; then
     source ~/.local.sh
 fi
