@@ -69,11 +69,15 @@ let g:syntastic_check_on_wq = 0
 
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_json_checkers = ['jsonlint']
+let g:syntastic_go_checkers = [] " vim-go does that for me
 
 " ctrlp
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] " only show files that are not ignored by git
 
-" vim thinks that json is javscript
+" vim-go
+let g:go_fmt_command = "goimports"
+
+" vim thinks that json is javascript
 au BufRead,BufNewFile *.json set filetype=json
 
 " dont use arrowkeys
