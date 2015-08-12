@@ -35,6 +35,9 @@ Plugin 'scrooloose/syntastic'
 " vim-clojure-highlight
 Plugin 'guns/vim-clojure-highlight'
 
+" identLine
+Plugin 'Yggdroot/indentLine'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -79,6 +82,13 @@ let g:go_fmt_command = "goimports"
 
 " vim thinks that json is javascript
 au BufRead,BufNewFile *.json set filetype=json
+
+" identLine
+let g:indentLine_enabled = 1
+let g:indentLine_leadingSpaceEnabled = 1
+let g:indentLine_color_term = 239
+let g:indentLine_char = '¦'
+let g:indentLine_leadingSpaceChar = '⋅'
 
 " dont use arrowkeys
 noremap <Up> <NOP>
