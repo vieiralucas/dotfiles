@@ -107,6 +107,9 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
+" long lines as just one line (have to scroll horizontally)
+set nowrap
+
 " 256 colors
 set t_Co=256
 
@@ -122,10 +125,9 @@ set laststatus=2
 " toggle invisible characters
 set invlist
 set list
-set listchars=tab:▸\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
+set listchars=tab:¦\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 highlight SpecialKey ctermbg=none guifg=darkgray" make the highlighting of tabs less annoying
 hi NonText ctermfg=7 guifg=darkgray
-set showbreak=↪
 
 " swapfiles location
 set backupdir=/tmp//
