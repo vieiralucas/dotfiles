@@ -13,6 +13,9 @@ mkdir -p ~/.vim/colors
 # copy monokai theme
 cp $DIR/monokai.vim ~/.vim/colors/monokai.vim
 
+# copy molokai theme
+cp $DIR/molokai ~/.vim/colors/molokai.vim
+
 # copy vimrc
 cp $DIR/.vimrc ~/.vimrc
 

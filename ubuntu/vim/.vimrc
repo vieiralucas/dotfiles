@@ -90,6 +90,11 @@ let g:indentLine_color_term = 239
 let g:indentLine_char = '¦'
 let g:indentLine_leadingSpaceChar = '⋅'
 
+" molokai
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
+
 " dont use arrowkeys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
