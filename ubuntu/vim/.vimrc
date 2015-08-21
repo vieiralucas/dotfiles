@@ -38,6 +38,9 @@ Plugin 'guns/vim-clojure-highlight'
 " identLine
 Plugin 'Yggdroot/indentLine'
 
+" identLine
+Plugin 'mattn/emmet-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
