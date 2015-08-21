@@ -10,11 +10,8 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # create colors folder
 mkdir -p ~/.vim/colors
 
-# copy monokai theme
-cp $DIR/monokai.vim ~/.vim/colors/monokai.vim
-
-# copy molokai theme
-cp $DIR/molokai ~/.vim/colors/molokai.vim
+# copy colors
+cp $DIR/* ~/.vim/colors/
 
 # copy vimrc
 cp $DIR/.vimrc ~/.vimrc
