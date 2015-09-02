@@ -140,3 +140,6 @@ hi NonText ctermfg=7 guifg=darkgray
 " swapfiles location
 set backupdir=/tmp//
 set directory=/tmp//
+
+" maintain terminal background
+hi Normal ctermbg=none
