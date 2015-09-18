@@ -30,7 +30,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bling/vim-airline'
 
 " syntastic
-Plugin 'scrooloose/syntastic'
+" Plugin 'scrooloose/syntastic'
 
 " vim-clojure-highlight
 Plugin 'guns/vim-clojure-highlight'
@@ -64,9 +64,9 @@ let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled=1
 
 " syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
