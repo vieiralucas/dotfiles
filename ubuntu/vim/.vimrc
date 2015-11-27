@@ -149,3 +149,7 @@ set directory=/tmp//
 
 " maintain terminal background
 hi Normal ctermbg=none
+
+" move code blocks easier
+vnoremap < <gv
+vnoremap > >gv
