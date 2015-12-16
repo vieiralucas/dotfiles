@@ -92,6 +92,9 @@ let g:go_fmt_command = "goimports"
 " vim thinks that json is javascript
 au BufRead,BufNewFile *.json set filetype=json
 
+" use html highlight for ejs files
+au BufNewFile,BufRead *.ejs set filetype=html
+
 " identLine
 let g:indentLine_enabled = 1
 " let g:indentLine_leadingSpaceEnabled = 1
