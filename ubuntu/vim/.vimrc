@@ -125,7 +125,7 @@ set shiftwidth=4
 set expandtab
 
 " long lines as just one line (have to scroll horizontally)
-set nowrap
+" set nowrap
 
 " 256 colors
 set t_Co=256
