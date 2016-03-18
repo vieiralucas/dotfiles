@@ -20,9 +20,6 @@ Plugin 'digitaltoad/vim-jade'
 " Go vim
 Plugin 'fatih/vim-go'
 
-" colorschemes
-Plugin 'chriskempson/base16-vim'
-
 " fugitive
 Plugin 'tpope/vim-fugitive'
 
@@ -55,6 +52,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " colorscheme
+set background=dark
 colorscheme wombat
 
 " NERDTree
