@@ -47,6 +47,9 @@ Plugin 'editorconfig/editorconfig-vim'
 " js hightlight
 Plugin 'othree/yajs.vim'
 
+" scala
+Plugin 'derekwyatt/vim-scala'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
