@@ -7,12 +7,6 @@ sudo apt-get install -y vim > /dev/null
 # setup vundle
 git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-# create colors folder
-mkdir -p ~/.vim/colors
-
-# copy colors
-cp $DIR/* ~/.vim/colors/
-
 # copy vimrc
 cp $DIR/.vimrc ~/.vimrc
 

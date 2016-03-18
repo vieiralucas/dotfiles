@@ -26,12 +26,6 @@ Plugin 'chriskempson/base16-vim'
 " fugitive
 Plugin 'tpope/vim-fugitive'
 
-" vim-airline
-Plugin 'bling/vim-airline'
-
-" syntastic
-" Plugin 'scrooloose/syntastic'
-
 " vim-clojure-highlight
 Plugin 'guns/vim-clojure-highlight'
 
@@ -50,6 +44,9 @@ Plugin 'othree/yajs.vim'
 " scala
 Plugin 'derekwyatt/vim-scala'
 
+" vim-colorschemes
+Plugin 'flazz/vim-colorschemes'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -57,34 +54,17 @@ filetype plugin indent on    " required
 "filetype plugin on
 " Put your non-Plugin stuff after this line
 
+" colorscheme
+colorscheme wombat
+
+" NERDTree
 " Open NERDTree automatically when vim starts up
 " autocmd vimenter * NERDTree
-" NERDTree
 let NERDTreeShowHidden=1
 map <silent> <C-n> :NERDTreeToggle<CR>
 
 " close NERDTree after a file is opened
-let g:NERDTreeQuitOnOpen=1
-
-
-" vim-airline
-let g:airline_powerline_fonts=1
-let g:airline_theme='molokai'
-let g:airline#extensions#tabline#enabled=1
-
-" syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_json_checkers = ['jsonlint']
-let g:syntastic_go_checkers = [] " vim-go does that for me
+" let g:NERDTreeQuitOnOpen=1
 
 " ctrlp
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] " only show files that are not ignored by git
@@ -93,7 +73,8 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 let g:go_fmt_command = "goimports"
 
 " vim thinks that json is javascript
-au BufRead,BufNewFile *.json set filetype=json
+" maybe its a good idea
+" au BufRead,BufNewFile *.json set filetype=json
 
 " use html highlight for ejs files
 au BufNewFile,BufRead *.ejs set filetype=html
@@ -104,11 +85,6 @@ let g:indentLine_enabled = 1
 let g:indentLine_color_term = 239
 let g:indentLine_char = '¦'
 " let g:indentLine_leadingSpaceChar = '⋅'
-
-" molokai
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
 
 " dont use arrowkeys
 noremap <Up> <NOP>
@@ -154,8 +130,13 @@ set backupdir=/tmp//
 set directory=/tmp//
 
 " maintain terminal background
-hi Normal ctermbg=none
+" hi Normal ctermbg=none
 
 " move code blocks easier
 vnoremap < <gv
 vnoremap > >gv
+
+" highlight current line
+set cursorline
+autocmd WinEnter * setlocal cursorline
+autocmd WinLeave * setlocal nocursorline
