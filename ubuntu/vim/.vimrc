@@ -109,6 +109,8 @@ set t_Co=256
 
 " line numbers
 set number
+set relativenumber
+
 
 " access system clipboard
 set clipboard=unnamed
