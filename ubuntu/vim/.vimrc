@@ -50,6 +50,10 @@ Plugin 'Shougo/neocomplete.vim'
 " vim-colorschemes
 Plugin 'flazz/vim-colorschemes'
 
+" vim-airline
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -68,6 +72,12 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 
 " close NERDTree after a file is opened
 " let g:NERDTreeQuitOnOpen=1
+
+" airline
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline_theme='bubblegum'
 
 " neocomplete.vim
 let g:neocomplete#enable_at_startup = 1
