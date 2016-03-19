@@ -29,7 +29,7 @@ Plugin 'guns/vim-clojure-highlight'
 " identLine
 Plugin 'Yggdroot/indentLine'
 
-" identLine
+" emmet
 Plugin 'mattn/emmet-vim'
 
 " editorconfig
@@ -41,8 +41,8 @@ Plugin 'othree/yajs.vim'
 " scala
 Plugin 'derekwyatt/vim-scala'
 
-" vim-colorschemes
-Plugin 'flazz/vim-colorschemes'
+" csapprox
+Plugin 'godlygeek/csapprox'
 
 " neocomplete.vim
 Plugin 'Shougo/neocomplete.vim'
@@ -55,8 +55,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 " colorscheme
-set background=dark
-colorscheme wombat
+colorscheme desertEx
 
 " NERDTree
 " Open NERDTree automatically when vim starts up
@@ -116,7 +115,6 @@ set t_Co=256
 " line numbers
 set number
 set relativenumber
-
 
 " access system clipboard
 set clipboard=unnamed

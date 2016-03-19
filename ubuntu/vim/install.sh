@@ -12,3 +12,7 @@ cp $DIR/.vimrc ~/.vimrc
 
 # install powerline fonts
 /bin/bash $DIR/fonts/install.sh
+
+# install desertEx
+wget https://raw.githubusercontent.com/vim-scripts/desertEx/master/colors/desertEx.vim -O ~/.vim/colors/desertEx.vim
+
