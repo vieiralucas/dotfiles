@@ -47,6 +47,9 @@ Plugin 'godlygeek/csapprox'
 " neocomplete.vim
 Plugin 'Shougo/neocomplete.vim'
 
+" vim-colorschemes
+Plugin 'flazz/vim-colorschemes'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -141,5 +144,6 @@ vnoremap > >gv
 
 " highlight current line
 set cursorline
+highlight CursorLine cterm=none ctermbg=DarkGrey
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
