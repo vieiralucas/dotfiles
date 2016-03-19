@@ -44,6 +44,9 @@ Plugin 'derekwyatt/vim-scala'
 " vim-colorschemes
 Plugin 'flazz/vim-colorschemes'
 
+" neocomplete.vim
+Plugin 'Shougo/neocomplete.vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -63,6 +66,9 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 
 " close NERDTree after a file is opened
 " let g:NERDTreeQuitOnOpen=1
+
+" neocomplete.vim
+let g:neocomplete#enable_at_startup = 1
 
 " ctrlp
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] " only show files that are not ignored by git
