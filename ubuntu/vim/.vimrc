@@ -154,6 +154,6 @@ vnoremap > >gv
 
 " highlight current line
 set cursorline
-highlight CursorLine cterm=none ctermbg=DarkGrey
+" highlight CursorLine cterm=none ctermbg=DarkGrey
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
