@@ -16,3 +16,4 @@ cp $DIR/.vimrc ~/.vimrc
 # install desertEx
 wget https://raw.githubusercontent.com/vim-scripts/desertEx/master/colors/desertEx.vim -O ~/.vim/colors/desertEx.vim
 
+vim +PluginInstall +qall
