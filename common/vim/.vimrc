@@ -62,6 +62,9 @@ filetype plugin indent on    " required
 "filetype plugin on
 " Put your non-Plugin stuff after this line
 
+" syntax
+syntax on
+
 " colorscheme
 colorscheme desertEx
 
