@@ -11,7 +11,15 @@ cp $DIR/.vimrc ~/.vimrc
 # install powerline fonts
 /bin/bash $DIR/fonts/install.sh
 
+mkdir -p ~/.vim/colors
+
 # install desertEx
 wget https://raw.githubusercontent.com/vim-scripts/desertEx/master/colors/desertEx.vim -O ~/.vim/colors/desertEx.vim
+
+# install atom-dark
+wget https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/master/colors/atom-dark.vim -O ~/.vim/colors/atom-dark.vim
+
+# install atom-dark-256
+wget https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/master/colors/atom-dark-256.vim -O ~/.vim/colors/atom-dark-256.vim
 
 vim +PluginInstall +qall

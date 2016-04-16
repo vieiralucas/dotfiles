@@ -66,7 +66,7 @@ filetype plugin indent on    " required
 syntax on
 
 " colorscheme
-colorscheme desertEx
+colorscheme atom-dark-256
 
 " NERDTree
 " Open NERDTree automatically when vim starts up
