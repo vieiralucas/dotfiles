@@ -2,6 +2,13 @@
 
 DIR="$( cd "$( dirname "$0" )" && pwd )"
 
+echo "Installing nvm"
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.24.0/install.sh | bash > /dev/null
+echo "Installing rvm"
+curl -sSL https://get.rvm.io | bash -s stable --ruby
+echo "Installing oh-my-zsh"
+curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh > /dev/null
+
 # set zsh to the default shell
 echo "Setting default shell for $(whoami) to zsh..."
 chsh -s $(which zsh) $(whoami)
@@ -25,6 +32,10 @@ cp $DIR/zsh/.zshrc ~/.zshrc
 # copy aliases to ~/.aliases
 echo "Copying .aliases to $(whoami)'s home folder..."
 cp $DIR/.aliases ~/.aliases
+
+bash $DIR/zsh/install.sh
+bash $DIR/vim/install.sh
+bash $DIR/tmux/install.sh
 
 # source .zshrc
 echo "Source .zshrc"
