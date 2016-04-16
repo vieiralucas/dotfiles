@@ -11,6 +11,7 @@ echo -e "\nInstalling homebrew pacakges"
 brew install ack
 brew install tree
 brew install wget
+brew install htop
 
 # webserver
 brew install nginx
