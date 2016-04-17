@@ -45,9 +45,6 @@ Plugin 'derekwyatt/vim-scala'
 " csapprox
 Plugin 'godlygeek/csapprox'
 
-" neocomplete.vim
-Plugin 'Shougo/neocomplete.vim'
-
 " vim-colorschemes
 Plugin 'flazz/vim-colorschemes'
 
@@ -82,9 +79,6 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_theme='bubblegum'
-
-" neocomplete.vim
-let g:neocomplete#enable_at_startup = 1
 
 " ctrlp
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard'] " only show files that are not ignored by git
