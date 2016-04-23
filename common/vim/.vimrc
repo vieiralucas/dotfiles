@@ -62,6 +62,9 @@ filetype plugin indent on    " required
 " syntax
 syntax on
 
+" indentation
+set nocindent smartindent
+
 " colorscheme
 colorscheme atom-dark-256
 
