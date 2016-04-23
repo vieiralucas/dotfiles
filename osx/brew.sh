@@ -23,3 +23,8 @@ brew install tmux
 brew install zsh
 brew install nvm
 
+# java
+brew install Caskroom/cask/java
+
+# android-sdk
+brew install android-sdk

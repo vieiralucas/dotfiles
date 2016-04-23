@@ -105,3 +105,5 @@ if [[ -f ~/.local.sh ]]; then
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+export ANDROID_HOME=/usr/local/opt/android-sdk
