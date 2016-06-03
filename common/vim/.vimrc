@@ -158,3 +158,6 @@ set cursorline
 " highlight CursorLine cterm=none ctermbg=DarkGrey
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
+
+" DONT CONCEAL
+set conceallevel=0
