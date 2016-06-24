@@ -83,6 +83,11 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 " close NERDTree after a file is opened
 " let g:NERDTreeQuitOnOpen=1
 
+" vim-jsx
+" enable jsx on js files
+let g:jsx_ext_required = 0
+
+
 " airline
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#left_sep = ' '
