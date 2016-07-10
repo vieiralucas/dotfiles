@@ -10,7 +10,7 @@ set -g status-left "#(id -un)@#h"
 
 # clock on right of status bar
 set -g status-right-length 60
-set -g status-right "%d %b %Y - %H:%M:%S %p"
+set -g status-right "#{battery_icon}#{battery_percentage} - %d %b %Y - %H:%M:%S %p"
 
 # default window title colors
 set-window-option -g window-status-fg colour241
