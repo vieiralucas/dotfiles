@@ -31,11 +31,10 @@ echo "Installing zsh..."
 sudo apt-get install -y zsh > /dev/null
 echo "Installing git..."
 sudo apt-get install -y git > /dev/null
+echo "Installing i3"
+sudo apt-get install -y i3 > /dev/null
 echo "Installing vim..."
 sh $DIR/vim/install.sh
-echo "Installing atom.io"
-wget https://atom.io/download/deb -O atom.deb > /dev/null
-sudo dpkg -i atom.deb
 rm atom.deb
 echo "Installing leiningen for clojure"
 curl https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein -o $HOME/bin/lein
