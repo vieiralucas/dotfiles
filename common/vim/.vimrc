@@ -58,6 +58,9 @@ Plugin 'pangloss/vim-javascript'
 " vim-jsx
 Plugin 'mxw/vim-jsx'
 
+" snippets
+Plugin 'SirVer/ultisnips'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -169,6 +172,10 @@ set cursorline
 " highlight CursorLine cterm=none ctermbg=DarkGrey
 autocmd WinEnter * setlocal cursorline
 autocmd WinLeave * setlocal nocursorline
+
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
 
 " DONT CONCEAL
 set conceallevel=0

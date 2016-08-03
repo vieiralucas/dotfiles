@@ -1,0 +1,81 @@
+snippet ustr
+'use strict';
+endsnippet
+
+snippet log 
+console.log({$0:#############################################});
+endsnippet
+
+snippet dbg
+debugger;
+endsnippet
+
+snippet dsc
+describe('$1', function() {$2
+});
+endsnippet
+
+snippet it
+it('$1', function() {$2
+});
+endsnippet
+
+snippet ito
+it.only('$1', function() {
+$2
+});
+endsnippet
+
+snippet class 
+class $1 {
+	constructor($2) {$3
+	}
+}
+endsnippet
+
+snippet imp "Import Library" b
+import $1 from '$2';
+endsnippet
+
+snippet impm "Import Many" b
+import { $1 } from '$2';
+endsnippet
+
+snippet impl "Import File" b
+import $1 from './$2';
+endsnippet
+
+snippet if "IF statement"
+if ($1) {$2
+}
+endsnippet
+
+snippet el "else statement"
+else {$1
+}
+endsnippet
+
+snippet elif "else if"
+else if ($1) {$2
+}
+endsnippet
+
+snippet lb "Arrows Function"
+($1) => {$2
+}
+
+endsnippet
+snippet lb1 "Arrows Function Single Arg"
+$1 => {$2
+}
+endsnippet
+
+snippet fn "Function"
+function $1($2) {$3
+}
+endsnippet
+
+snippet afn "Annonimous Function"
+function($2) {$3
+}
+endsnippet

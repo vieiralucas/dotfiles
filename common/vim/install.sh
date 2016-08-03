@@ -22,4 +22,8 @@ wget https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/master/colors/atom
 # install atom-dark-256
 wget https://raw.githubusercontent.com/gosukiwi/vim-atom-dark/master/colors/atom-dark-256.vim -O ~/.vim/colors/atom-dark-256.vim
 
+# install snippets
+mkdir -p $HOME/.vim/UltiSnips
+cp $DIR/snippets/* $HOME/.vim/UltiSnips/
+
 vim +PluginInstall +qall
