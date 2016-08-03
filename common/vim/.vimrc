@@ -172,3 +172,6 @@ autocmd WinLeave * setlocal nocursorline
 
 " DONT CONCEAL
 set conceallevel=0
+
+" iterative search
+set incsearch
