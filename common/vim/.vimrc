@@ -61,6 +61,9 @@ Plugin 'mxw/vim-jsx'
 " snippets
 Plugin 'SirVer/ultisnips'
 
+" syntastic
+Plugin 'scrooloose/syntastic'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -182,3 +185,11 @@ set conceallevel=0
 
 " iterative search
 set incsearch
+"
+" syntastic
+let g:syntastic_javascript_checkers = ['eslint']
+
+" Point syntastic checker at locally installed if it exists.
+if executable('node_modules/.bin/eslint')
+  let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
+endif
