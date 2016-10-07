@@ -144,6 +144,7 @@ set expandtab
 set t_Co=256
 
 " line numbers
+set relativenumber
 set number
 
 " access system clipboard
