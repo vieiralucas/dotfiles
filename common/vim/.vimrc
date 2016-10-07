@@ -15,9 +15,6 @@ Plugin 'scrooloose/nerdtree'
 " ctrlp.vim
 Plugin 'kien/ctrlp.vim'
 
-" jade.vim
-Plugin 'digitaltoad/vim-jade'
-
 " Go vim
 Plugin 'fatih/vim-go'
 
@@ -26,9 +23,6 @@ Plugin 'tpope/vim-fugitive'
 
 " vim-clojure-highlight
 Plugin 'guns/vim-clojure-highlight'
-
-" identLine
-Plugin 'Yggdroot/indentLine'
 
 " emmet
 Plugin 'mattn/emmet-vim'
@@ -57,9 +51,6 @@ Plugin 'pangloss/vim-javascript'
 
 " vim-jsx
 Plugin 'mxw/vim-jsx'
-
-" snippets
-Plugin 'SirVer/ultisnips'
 
 " syntastic
 Plugin 'scrooloose/syntastic'
@@ -112,13 +103,6 @@ let g:go_fmt_command = "goimports"
 
 " use html highlight for ejs files
 au BufNewFile,BufRead *.ejs set filetype=html
-
-" identLine
-let g:indentLine_enabled = 1
-" let g:indentLine_leadingSpaceEnabled = 1
-let g:indentLine_color_term = 239
-let g:indentLine_char = '¦'
-" let g:indentLine_leadingSpaceChar = '⋅'
 
 " dont use arrowkeys
 noremap <Up> <NOP>
