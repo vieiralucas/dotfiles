@@ -81,7 +81,12 @@ let g:airline_theme='bubblegum'
 " vim devicons
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
 
-
 " vim-go
 let g:go_fmt_command = "goimports"
+
+" rainbow parentheses
+augroup rainbow_lisp
+  autocmd!
+  autocmd FileType lisp,clojure,scheme RainbowParentheses
+augroup END
 

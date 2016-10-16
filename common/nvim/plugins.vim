@@ -28,6 +28,12 @@ Plug 'mxw/vim-jsx', { 'for': ['jsx', 'javascript'] } " JSX support
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' } " sass scss syntax support
 
 " go
-Plug 'fatih/vim-go', { 'for': 'go' } " go support
+Plug 'fatih/vim-go', { 'for': 'go' }
+
+" clojure
+Plug 'guns/vim-clojure-static', { 'for': ['clojure', 'lisp', 'scheme'] }
+Plug 'junegunn/rainbow_parentheses.vim', { 'for': ['clojure', 'lisp', 'scheme'] }
+Plug 'guns/vim-clojure-highlight', { 'for': ['clojure', 'lisp', 'scheme'] }
+Plug 'tpope/vim-fireplace', { 'for': ['clojure', 'lisp', 'scheme'] }
 
 call plug#end()
