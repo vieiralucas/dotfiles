@@ -19,6 +19,8 @@ brew install nginx
 # development tools
 brew install tig
 brew install macvim --override-system-vim
+brew tap neovim/neovim
+brew install --HEAD neovim
 brew install tmux
 brew install zsh
 brew install nvm

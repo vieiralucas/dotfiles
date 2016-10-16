@@ -35,6 +35,7 @@ cp $DIR/.aliases ~/.aliases
 
 bash $DIR/zsh/install.sh
 bash $DIR/vim/install.sh
+bash $DIR/nvim/install.sh
 bash $DIR/tmux/install.sh
 
 # source .zshrc
