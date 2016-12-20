@@ -1,0 +1,25 @@
+#!/bin/bash
+
+alias c="clear"
+alias e="exit"
+alias psa="ps aux"
+alias psag="ps aux | grep"
+alias k9="kill -9"
+alias hosts="sudo vim /etc/hosts"
+alias tmux='tmux -2' # give -2 flag to tmux so it runs with 256 colors
+
+# too lazy to cd back
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../../"
+
+alias vi="nvim" # replace vim with neovim
+
+# git
+alias g="git"
+alias gdub='git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+alias gcam="git commit -am"
+alias gst="git status"
+alias glg="git log"
+alias gcm="git checkout master"
+alias gco="git checkout"
