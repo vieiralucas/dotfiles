@@ -8,6 +8,12 @@ alias k9="kill -9"
 alias hosts="sudo vim /etc/hosts"
 alias tmux='tmux -2' # give -2 flag to tmux so it runs with 256 colors
 
+# ls alias
+alias ls="ls -G"
+alias l="ls"
+alias ll="ls -l"
+alias la="ls -a"
+
 # too lazy to cd back
 alias ..="cd .."
 alias ...="cd ../.."

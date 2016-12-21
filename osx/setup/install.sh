@@ -1,15 +1,15 @@
 #!/bin/bash
 
-DIR=$PWD
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+
+# copy dotfiles
+/bin/bash $DIR/dotfiles.sh
 
 # homebrew stuff
 /bin/bash $DIR/homebrew.sh
 
 # rvm
-echo "Installing rvm"
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-curl -sSL https://get.rvm.io | bash -s stable --ruby
+/bin/bash $DIR/rvm.sh
 
-# copy dotfiles
-rsync -a --progress $DIR/.. $HOME/ --exclude $DIR
-
+# pure-prompt
+/bin/bash $DIR/pure-promp.sh

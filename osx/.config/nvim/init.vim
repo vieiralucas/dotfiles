@@ -78,9 +78,6 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline_theme='bubblegum'
 
-" vim devicons
-set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types:h11
-
 " vim-go
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1

@@ -7,6 +7,12 @@ fi
 
 echo "Installing homebrew packages"
 
+# update
+brew update
+
+# gpg
+brew install gnupg gnupg2
+
 # cli tools
 brew install ack
 brew install tree
@@ -31,6 +37,9 @@ brew install flow
 
 # java
 brew install Caskroom/cask/java
+
+# zsh syntax highlight
+brew install zsh-syntax-highlighting
 
 # android-sdk
 # brew install android-sdk

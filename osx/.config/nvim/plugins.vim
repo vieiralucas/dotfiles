@@ -9,7 +9,6 @@ Plug 'editorconfig/editorconfig-vim'
 " ui
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ryanoasis/vim-devicons'
 Plug 'flazz/vim-colorschemes'
 
 " html / templates
