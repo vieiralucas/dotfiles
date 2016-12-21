@@ -1,6 +1,10 @@
-# .zshrc
+export FPATH="$HOME/.zsh/func:$FPATH"
+
+# prompt
+setopt PROMPT_SUBST
 autoload -U promptinit; promptinit
-prompt pure
+# prompt pure
+prompt grb
 
 if [[ -f ~/.aliases ]]; then
     source ~/.aliases
