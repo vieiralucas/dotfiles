@@ -94,3 +94,6 @@ let g:flow#timeout = 10
 
 " vim jsx
 let g:jsx_ext_required = 0 " enable even is extension is not .jsx
+
+" disable mouse
+set mouse=""
