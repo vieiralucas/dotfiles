@@ -1,0 +1,9 @@
+[user]
+    name = Lucas Vieira
+    email = vieiralucas4@gmail.com
+[color]
+    ui = auto
+[merge]
+    tool = vimdiff
+[core]
+    editor = nvim
