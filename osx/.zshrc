@@ -18,6 +18,14 @@ if [[ -f ~/.local.sh ]]; then
     source ~/.local.sh
 fi
 
+# history stuff
+export HISTCONTROL=erasedups
+export HISTSIZE=10000
+bindkey '^R' history-incremental-search-backward
+
+# vi mode
+bindkey -v
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 export NVM_DIR="$HOME/.nvm"
