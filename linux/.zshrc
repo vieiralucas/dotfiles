@@ -24,7 +24,7 @@ export HISTSIZE=10000
 bindkey '^R' history-incremental-search-backward
 
 # vi mode
-bindkey -v
+# bindkey -v
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
