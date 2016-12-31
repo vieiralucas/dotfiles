@@ -19,7 +19,6 @@ if [[ -f ~/.local.sh ]]; then
 fi
 
 # history stuff
-export HISTCONTROL=erasedups
 export HISTSIZE=10000
 bindkey '^R' history-incremental-search-backward
 
