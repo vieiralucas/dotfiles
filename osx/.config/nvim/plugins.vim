@@ -39,7 +39,7 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 
 " elm
-Plug 'ElmCast/elm-vim', { 'for': ['elm'] }
+Plug 'lambdatoast/elm.vim', { 'for': ['elm'] }
 
 
 call plug#end()
