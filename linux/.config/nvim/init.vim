@@ -49,9 +49,9 @@ autocmd WinLeave * setlocal nocursorline
 " Searching
 set ignorecase              " case insensitive searching
 set smartcase               " case-sensitive if expresson contains a capital letter
-set hlsearch                " highlight search results
+" set hlsearch                " highlight search results
 " set incsearch               " set incremental search, like modern browsers
-" set nolazyredraw            " don't redraw while executing macros
+set nolazyredraw            " don't redraw while executing macros
 
 " nerdtree
 let NERDTreeShowHidden=1

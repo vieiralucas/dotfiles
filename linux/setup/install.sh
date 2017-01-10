@@ -4,7 +4,11 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 
 # nvm
 /bin/bash $DIR/nvm.sh
-# nvm needs to run before copying dotfiles, because they want to edit my .zshrc --'
+
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# nvm and oh-my-zsh needs to run before copying dotfiles, because they want to edit my .zshrc --'
 
 # copy dotfiles
 /bin/bash $DIR/dotfiles.sh
