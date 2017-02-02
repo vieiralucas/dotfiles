@@ -1,10 +1,5 @@
 source ~/.config/nvim/plugins.vim
 
-" theme
-syntax enable
-colorscheme Benokai
-set background=dark
-
 " make backspace behave in a sane manner
 set backspace=indent,eol,start
 
@@ -29,29 +24,12 @@ set clipboard=unnamed
 " show the status line all the time
 set laststatus=2
 
-" toggle invisible characters
-set invlist
-set list
-set listchars=tab:¦\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
-highlight SpecialKey ctermbg=none guifg=darkgray" make the highlighting of tabs less annoying
-hi NonText ctermfg=7 guifg=darkgray
-
 " move code blocks easier
 vnoremap < <gv
 vnoremap > >gv
 
 " highlight current line
 set cursorline
-" highlight CursorLine cterm=none ctermbg=DarkGrey
-autocmd WinEnter * setlocal cursorline
-autocmd WinLeave * setlocal nocursorline
-
-" Searching
-set ignorecase              " case insensitive searching
-set smartcase               " case-sensitive if expresson contains a capital letter
-set hlsearch                " highlight search results
-" set incsearch               " set incremental search, like modern browsers
-" set nolazyredraw            " don't redraw while executing macros
 
 " nerdtree
 let NERDTreeShowHidden=1
@@ -71,16 +49,24 @@ let g:neomake_javascript_eslint_exe=substitute(g:eslint_path, '^\n*\s*\(.\{-}\)\
 
 autocmd! BufWritePost * Neomake
 
-" airline
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline_theme='bubblegum'
-
 " vim-go
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 1
+let g:go_fmt_fail_silently = 1
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <leader>ds <Plug>(go-def-split)
+au FileType go nmap <leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <leader>dt <Plug>(go-def-tab)
+au FileType go nmap <leader>gd <Plug>(go-doc)
+au FileType go nmap <leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <leader>s <Plug>(go-implements)
+au FileType go nmap <leader>e <Plug>(go-rename)
+
 
 " rainbow parentheses
 augroup rainbow_lisp
@@ -93,7 +79,14 @@ let g:flow#autoclose = 1
 let g:flow#timeout = 10
 
 " vim jsx
-let g:jsx_ext_required = 0 " enable even is extension is not .jsx
+let g:jsx_ext_required = 0 " enable even if extension is not .jsx
 
 " disable mouse
 set mouse=""
+
+" theme
+set background=dark
+syntax off
+
+" search
+set nohlsearch

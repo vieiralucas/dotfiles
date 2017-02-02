@@ -7,8 +7,8 @@ Plug 'benekastah/neomake'
 Plug 'editorconfig/editorconfig-vim'
 
 " ui
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 Plug 'flazz/vim-colorschemes'
 
 " html / templates
