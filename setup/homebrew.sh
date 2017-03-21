@@ -31,6 +31,7 @@ brew install tmux
 brew install zsh
 brew install zsh-completions
 brew install nvm
+brew install emacs
 
 # javascript tools
 brew install yarn

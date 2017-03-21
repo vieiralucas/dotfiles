@@ -1,7 +1,7 @@
 # status bar
 set -g status-interval 1
 set -g status-justify centre
-set -g status-bg colour234
+set -g status-bg colour229
 set -g status-fg colour241
 
 # user@hostname on left of status bar

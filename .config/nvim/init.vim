@@ -86,8 +86,8 @@ set mouse=""
 
 " theme
 syntax enable
-colorscheme Benokai
-set background=dark
+colorscheme PaperColor
+set background=light
 
 " search
 set nohlsearch
