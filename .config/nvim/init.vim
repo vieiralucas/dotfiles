@@ -83,7 +83,7 @@ let g:jsx_ext_required = 0 " enable even if extension is not .jsx
 set mouse=""
 
 " theme
-syntax enable
+syntax off
 colorscheme PaperColor
 set background=dark
 
