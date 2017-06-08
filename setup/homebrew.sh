@@ -42,6 +42,7 @@ brew install Caskroom/cask/java
 
 # zsh syntax highlight
 brew install zsh-syntax-highlighting
+brew link zsh-syntax-highlighting
 
 # android-sdk
 # brew install android-sdk

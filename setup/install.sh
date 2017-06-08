@@ -11,5 +11,3 @@ DIR="$( cd "$( dirname "$0" )" && pwd )"
 # rvm
 /bin/bash $DIR/rvm.sh
 
-# pure-prompt
-/bin/bash $DIR/pure-prompt.sh
