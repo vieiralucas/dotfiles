@@ -91,6 +91,10 @@ if [[ -f ~/.aliases ]]; then
     source ~/.aliases
 fi
 
+if [[ -f ~/.profile ]]; then
+    source ~/.profile
+fi
+
 if [[ -d ~/bin ]]; then
     PATH="$PATH:$HOME/bin"
 fi

@@ -5,6 +5,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'benekastah/neomake'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'mitermayer/vim-prettier', {
+    \ 'do': 'npm install',
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss'] }
 
 " ui
 " Plug 'vim-airline/vim-airline'
