@@ -40,9 +40,12 @@ Plug 'guns/vim-sexp'
 Plug 'tpope/vim-sexp-mappings-for-regular-people'
 
 " elm
-Plug 'lambdatoast/elm.vim', { 'for': ['elm'] }
+Plug 'elmcast/elm-vim', { 'for': ['elm'] }
 
 " typescript
 Plug 'leafgarland/typescript-vim'
+
+" rust
+Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
 
 call plug#end()

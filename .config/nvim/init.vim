@@ -83,7 +83,7 @@ let g:jsx_ext_required = 0 " enable even if extension is not .jsx
 set mouse=""
 
 " theme
-syntax off
+syntax on
 colorscheme PaperColor
 set background=dark
 
@@ -98,7 +98,7 @@ autocmd FileType typescript :set makeprg=tsc
 " prettier
 let g:prettier#quickfix_enabled = 0
 let g:prettier#autoformat = 0
-autocmd BufWritePre,InsertLeave *.js,*.css,*.scss,*.less PrettierAsync
+autocmd BufWritePre *.js,*.css,*.scss,*.less PrettierAsync
 
 " max line lengh that prettier will wrap on
 let g:prettier#config#print_width = 80
@@ -127,3 +127,5 @@ let g:prettier#config#trailing_comma = 'none'
 " flow|babylon|typescript|postcss
 let g:prettier#config#parser = 'babylon'
 
+" elm-format on save
+let g:elm_format_autosave = 1
