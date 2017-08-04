@@ -46,6 +46,7 @@ Plug 'elmcast/elm-vim', { 'for': ['elm'] }
 Plug 'leafgarland/typescript-vim'
 
 " rust
-Plug 'rust-lang/rust.vim', { 'for': ['rust'] }
+Plug 'rust-lang/rust.vim', { 'for': ['rust'], 'do': 'cargo install rustfmt' }
+Plug 'racer-rust/vim-racer', { 'for': ['rust'], 'do': 'cargo install racer' }
 
 call plug#end()

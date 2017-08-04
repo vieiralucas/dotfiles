@@ -114,4 +114,6 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export GOPATH=$HOME/golang
 export PATH="$PATH:$GOPATH/bin" # Add $GOPATH/bin to $PATH
 
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+
 eval $(thefuck --alias)

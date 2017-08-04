@@ -45,7 +45,7 @@ let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclu
 " let g:eslint_path = system('PATH=$(npm bin):$PATH && which eslint')
 " let g:neomake_javascript_eslint_exe=substitute(g:eslint_path, '^\n*\s*\(.\{-}\)\n*\s*$', '\1', '')
 
-" autocmd! BufWritePost * Neomake
+autocmd! BufWritePost * Neomake
 
 " vim-go
 let g:go_fmt_command = "goimports"
@@ -129,3 +129,13 @@ let g:prettier#config#parser = 'babylon'
 
 " elm-format on save
 let g:elm_format_autosave = 1
+
+" rust
+let g:rustfmt_autosave = 1
+let g:racer_experimental_completer = 1
+let g:racer_cmd = "/Users/lucas/.cargo/bin/racer"
+
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
