@@ -43,10 +43,14 @@ Plug 'tpope/vim-sexp-mappings-for-regular-people'
 Plug 'elmcast/elm-vim', { 'for': ['elm'] }
 
 " typescript
-Plug 'leafgarland/typescript-vim'
+Plug 'mhartington/nvim-typescript'
+Plug 'HerringtonDarkholme/yats.vim'
 
 " rust
 Plug 'rust-lang/rust.vim', { 'for': ['rust'], 'do': 'cargo install rustfmt' }
 Plug 'racer-rust/vim-racer', { 'for': ['rust'], 'do': 'cargo install racer' }
+
+" deoplete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()

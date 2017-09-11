@@ -90,15 +90,10 @@ set background=dark
 " search
 set nohlsearch
 
-" typescript
-autocmd QuickFixCmdPost [^l]* nested cwindow
-autocmd QuickFixCmdPost    l* nested lwindow
-autocmd FileType typescript :set makeprg=tsc
-
 " prettier
 let g:prettier#quickfix_enabled = 0
 let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.css,*.scss,*.less PrettierAsync
+autocmd BufWritePre *.js,*.ts,*.css,*.scss,*.less PrettierAsync
 
 " max line lengh that prettier will wrap on
 let g:prettier#config#print_width = 80
@@ -122,7 +117,7 @@ let g:prettier#config#bracket_spacing = 'true'
 let g:prettier#config#jsx_bracket_same_line = 'true'
 
 " none|es5|all
-let g:prettier#config#trailing_comma = 'none'
+let g:prettier#config#trailing_comma = 'es5'
 
 " flow|babylon|typescript|postcss
 let g:prettier#config#parser = 'babylon'
@@ -139,3 +134,6 @@ au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
+
+" deoplete
+let g:deoplete#enable_at_startup = 1
