@@ -1,8 +1,8 @@
 # status bar
 set -g status-interval 1
 set -g status-justify centre
-set -g status-bg colour235
-set -g status-fg colour15
+set -g status-bg colour15
+set -g status-fg colour235
 
 # user@hostname on left of status bar
 set -g status-left-length 60
@@ -18,6 +18,6 @@ set-window-option -g window-status-bg default
 set -g window-status-format "#I #W"
 
 # active window title colors
-set-window-option -g window-status-current-fg colour15
+set-window-option -g window-status-current-fg default
 set-window-option -g window-status-current-bg default
 set-window-option -g  window-status-current-format "#[bold]#I #W"
