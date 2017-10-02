@@ -117,3 +117,5 @@ export PATH="$PATH:$GOPATH/bin" # Add $GOPATH/bin to $PATH
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 eval $(thefuck --alias)
+
+export PATH="$PATH:$HOME/.local/bin"
