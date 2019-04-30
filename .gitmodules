@@ -1,3 +1,0 @@
-[submodule "common/vim/fonts"]
-	path = common/vim/fonts
-	url = git@github.com:powerline/fonts.git
