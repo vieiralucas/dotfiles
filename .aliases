@@ -1,0 +1,6 @@
+alias g=git
+alias c=clear
+alias e=exit
+alias gst="git status"
+alias ll="ls -l"
+alias vi=nvim
