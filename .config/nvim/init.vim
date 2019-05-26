@@ -21,7 +21,9 @@ set relativenumber
 set cursorline
 set clipboard=unnamed
 set nohlsearch
-syntax on
+syntax off
+let g:loaded_matchparen=1
+
 
 " move code blocks easier
 vnoremap < <gv
