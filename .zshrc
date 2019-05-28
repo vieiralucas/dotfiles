@@ -118,7 +118,7 @@ export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(type -f __init_nvm)" = function ]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'tsc')
+  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'tsc' 'npx')
   function __init_nvm() {
     for i in "${__node_commands[@]}"; do unalias $i; done
     . "$NVM_DIR"/nvm.sh
