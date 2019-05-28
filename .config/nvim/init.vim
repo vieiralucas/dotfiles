@@ -51,6 +51,7 @@ nnoremap <silent> <leader>, :Files<CR>
 " nerdtree
 let NERDTreeShowHidden=1
 map <silent> <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeNodeDelimiter = "\u00a0"
 
 let g:deoplete#enable_at_startup = 1
 
