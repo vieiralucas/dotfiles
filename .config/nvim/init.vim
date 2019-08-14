@@ -1,16 +1,12 @@
 call plug#begin('~/.vim/plugged')
+
 Plug 'tpope/vim-sleuth'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
-
-" js, ts
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'ianks/vim-tsx'
 Plug 'HerringtonDarkholme/yats.vim'
-Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
-Plug 'Shougo/deoplete.nvim'
-Plug 'Shougo/denite.nvim'
-Plug 'ruanyl/vim-sort-imports'
 
 call plug#end()
 
@@ -23,7 +19,17 @@ set clipboard=unnamed
 set nohlsearch
 syntax off
 let g:loaded_matchparen=1
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set signcolumn=yes
 
+" ts
+au BufNewFile,BufRead *.ts setlocal filetype=typescript
+au BufNewFile,BufRead *.tsx setlocal filetype=typescript.tsx
 
 " move code blocks easier
 vnoremap < <gv
@@ -42,10 +48,6 @@ inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
-let g:prettier#exec_cmd_async = 1
-let g:prettier#autoformat=0 
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-
 nnoremap <silent> <leader>, :Files<CR>
 
 " nerdtree
@@ -53,6 +55,24 @@ let NERDTreeShowHidden=1
 map <silent> <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeNodeDelimiter = "\u00a0"
 
-let g:deoplete#enable_at_startup = 1
+" coc
+let g:coc_global_extensions = [
+\ 'coc-css',
+\ 'coc-json',
+\ 'coc-tsserver',
+\ 'coc-eslint',
+\ 'coc-tslint-plugin',
+\ 'coc-prettier',
+\ 'coc-html',
+\ 'coc-yank'
+\ ]
 
-let g:import_sort_auto = 1
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+nmap <silent> gh <Plug>(coc-doHover)
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+

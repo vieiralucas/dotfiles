@@ -4,3 +4,4 @@ alias e=exit
 alias gst="git status"
 alias ll="ls -l"
 alias vi=nvim
+alias gdub="git branch --merged | grep -v '\*' | xargs git branch -D"
