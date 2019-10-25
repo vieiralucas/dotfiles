@@ -7,8 +7,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ianks/vim-tsx'
 Plug 'HerringtonDarkholme/yats.vim'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'lifepillar/vim-solarized8'
 
 call plug#end()
+
+set background=light
 
 let mapleader = ","
 
@@ -18,7 +22,6 @@ set cursorline
 set clipboard=unnamed
 set nohlsearch
 syntax off
-let g:loaded_matchparen=1
 set hidden
 set nobackup
 set nowritebackup
@@ -26,6 +29,7 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
+colorscheme solarized8_flat
 
 " ts
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
@@ -74,5 +78,17 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gh <Plug>(coc-doHover)
+
+" Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
