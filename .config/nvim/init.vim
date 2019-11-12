@@ -8,11 +8,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ianks/vim-tsx'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'lifepillar/vim-solarized8'
+Plug 'arcticicestudio/nord-vim'
+Plug 'andys8/vim-elm-syntax', { 'for': ['elm'] }
 
 call plug#end()
 
-set background=light
+colorscheme nord
+set background=dark
 
 let mapleader = ","
 
@@ -29,7 +31,9 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set signcolumn=yes
-colorscheme solarized8_flat
+set invlist
+set list
+set listchars=eol:¬,trail:⋅
 
 " ts
 au BufNewFile,BufRead *.ts setlocal filetype=typescript
