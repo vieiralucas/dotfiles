@@ -8,13 +8,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ianks/vim-tsx'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'arcticicestudio/nord-vim'
 Plug 'andys8/vim-elm-syntax', { 'for': ['elm'] }
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
 
-colorscheme nord
-set background=dark
+set background=light
+colorscheme PaperColor
 
 let mapleader = ","
 
