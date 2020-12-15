@@ -1,4 +1,9 @@
 # This is Git's per-user configuration file.
 [user]
-name = Lucas Vieira
-email = vieiralucas4@gmail.com
+	name = Lucas Vieira
+	email = vieiralucas4@gmail.com
+[filesystem "N/A|13.0.2|/dev/disk1s1"]
+	timestampResolution = 15000 nanoseconds
+	minRacyThreshold = 0 nanoseconds
+[pull]
+	rebase = true
