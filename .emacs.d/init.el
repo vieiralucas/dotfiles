@@ -58,6 +58,14 @@
 (add-hook 'typescript-mode-hook #'setup-tide-mode)
 
 ;; finish tide setup
+
+(with-eval-after-load 'evil
+  (with-eval-after-load 'company
+    (define-key evil-insert-state-map (kbd "C-n") nil)
+    (define-key evil-insert-state-map (kbd "C-p") nil)
+    (evil-define-key nil company-active-map (kbd "C-n") #'company-select-next)
+    (evil-define-key nil company-active-map (kbd "C-p") #'company-select-previous)))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
