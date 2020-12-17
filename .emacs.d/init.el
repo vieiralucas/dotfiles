@@ -53,6 +53,10 @@
 (setq show-paren-delay 0)
 (show-paren-mode 1)
 
+;; scroll like a normal person
+(setq scroll-step 1)
+(setq scroll-margin 0)
+
 ;; evil mode
 (use-package evil
   :ensure t
