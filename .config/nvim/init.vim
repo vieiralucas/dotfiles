@@ -9,12 +9,8 @@ Plug 'ianks/vim-tsx'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'andys8/vim-elm-syntax', { 'for': ['elm'] }
-Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()
-
-set background=light
-colorscheme PaperColor
 
 let mapleader = ","
 
@@ -23,7 +19,6 @@ set relativenumber
 set cursorline
 set clipboard=unnamed
 set nohlsearch
-syntax off
 set hidden
 set nobackup
 set nowritebackup
