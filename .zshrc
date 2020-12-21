@@ -6,6 +6,13 @@ if [ -f $HOME/.aliases ]; then
   source $HOME/.aliases
 fi
 
+# add git branch to prompt
+autoload -Uz vcs_info
+precmd() { vcs_info }
+zstyle ':vcs_info:git:*' formats 'git[%b] '
+setopt PROMPT_SUBST
+PROMPT='%n@%m %1~ ${vcs_info_msg_0_}%# '
+
 # android
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
@@ -16,7 +23,6 @@ export PATH="$HOME/Library/Python/3.7/bin:$PATH"
 
 # yarn
 export PATH="$PATH:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin"
-
 
 # Stolen from https://www.growingwiththeweb.com/2018/01/slow-nvm-init.html
 # Defer initialization of nvm until nvm, node or a node-dependent command is
