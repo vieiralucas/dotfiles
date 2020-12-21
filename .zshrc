@@ -13,6 +13,18 @@ zstyle ':vcs_info:git:*' formats 'git[%b] '
 setopt PROMPT_SUBST
 PROMPT='%n@%m %1~ ${vcs_info_msg_0_}%# '
 
+function gcm() {
+  command git rev-parse --git-dir &>/dev/null || return
+  local branch
+  for branch in main trunk; do
+    if command git show-ref -q --verify refs/heads/$branch; then
+      git checkout $branch
+      return
+    fi
+  done
+  git checkout master
+}
+
 # android
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
