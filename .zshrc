@@ -1,5 +1,6 @@
 export EDITOR=emacs
 export TERM="screen-256color"
+export LANG=en_US.UTF-8
 
 if [ -f $HOME/.aliases ]; then
   source $HOME/.aliases
