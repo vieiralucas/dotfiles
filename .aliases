@@ -3,6 +3,7 @@ alias c=clear
 alias e=exit
 alias gst="git status"
 alias gco="git checkout"
+alias glg="git log"
 alias ll="ls -l"
 alias vi=emacs
 alias gdub="git branch --merged | grep -v '\*' | xargs git branch -D"
