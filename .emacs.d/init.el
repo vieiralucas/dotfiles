@@ -16,6 +16,9 @@
 ;; turn off menu-bar
 (menu-bar-mode -1)
 
+;; who needs a map?
+(setq inhibit-startup-message t)
+
 ;; line numbers
 (global-display-line-numbers-mode)
 (setq display-line-numbers-type 'relative)
