@@ -5,5 +5,7 @@ alias gst="git status"
 alias gco="git checkout"
 alias glg="git log"
 alias ll="ls -l"
+alias la="ls -a"
+alias lla="ll -a"
 alias vi=emacs
 alias gdub="git branch --merged | grep -v '\*' | xargs git branch -D"
