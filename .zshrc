@@ -47,7 +47,7 @@ export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
 if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(typeset -f __init_nvm > /dev/null)" ]; then
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
-  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'npx')
+  declare -a __node_commands=('nvm' 'node' 'npm' 'yarn' 'npx' 'emacs')
   function __init_nvm() {
     for i in "${__node_commands[@]}"; do unalias $i; done
     . "$NVM_DIR"/nvm.sh
