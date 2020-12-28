@@ -4,7 +4,7 @@
 
 (require 'package)
 (add-to-list 'package-archives
-  '("melpa" . "https://melpa.org/packages/"))
+             '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
 
 (unless (package-installed-p 'use-package)
@@ -18,6 +18,12 @@
 
 ;; who needs a map?
 (setq inhibit-startup-message t)
+
+;; disable auto-save
+(setq auto-save-default nil)
+
+;; disable file backups
+(setq make-backup-files nil)
 
 ;; line numbers
 (global-display-line-numbers-mode)
@@ -35,8 +41,17 @@
 (setq show-paren-delay 0)
 (show-paren-mode 1)
 
+(use-package evil-leader
+  :ensure t
+  :config
+  (evil-leader/set-leader ",")
+  (evil-leader/set-key
+    "f" 'format-all-buffer)
+  (global-evil-leader-mode))
+
 (use-package evil
   :ensure t
+  :after (evil-leader)
   :config
   (evil-mode 1))
 
@@ -56,12 +71,18 @@
   (evil-define-key nil company-active-map (kbd "C-n") #'company-select-next)
   (evil-define-key nil company-active-map (kbd "C-p") #'company-select-previous))
 
+;; autoformat
+(use-package format-all
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'format-all-mode))
+
 ;; typescript
 (use-package typescript-mode
   :ensure t
   :config
-    (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
-    (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode)))
+  (add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode)))
 
 (defun setup-tide-mode ()
   (interactive)
@@ -76,22 +97,39 @@
 (use-package tide
   :ensure t
   :config
-    (company-mode +1)
-    ;; aligns annotation to the right hand side
-    (setq company-tooltip-align-annotations t)
-    (setq tide-tsserver-executable "node_modules/.bin/tsserver")
-    (add-hook 'typescript-mode-hook #'setup-tide-mode))
+  (company-mode +1)
+  ;; aligns annotation to the right hand side
+  (setq company-tooltip-align-annotations t)
+  (setq tide-tsserver-executable "node_modules/.bin/tsserver")
+  (add-hook 'typescript-mode-hook #'setup-tide-mode))
 
 ;; web
 (use-package web-mode
   :ensure t
   :init
-    (setq web-mode-content-types-alist '(("jsx" . "\\.tsx\\'")))
-    (setq web-mode-content-types-alist '(("jsx" . "\\.js\\'")))
+  (setq web-mode-content-types-alist '(("jsx" . "\\.tsx\\'")))
+  (setq web-mode-content-types-alist '(("jsx" . "\\.js\\'")))
   :config
-    (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
-    (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
-    (add-hook 'web-mode-hook #'setup-tide-mode))
+  (add-to-list 'auto-mode-alist '("\\.html\\'" . web-mode))
+  (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+  (add-hook 'web-mode-hook #'setup-tide-mode))
+
+;; purescript
+(use-package psc-ide
+  :ensure t
+  :config
+  (setq psc-ide-use-npm-bin t))
+
+(use-package purescript-mode
+  :ensure t
+  :after (psc-ide)
+  :config
+  (add-hook 'purescript-mode-hook
+            (lambda ()
+              (psc-ide-mode)
+              (company-mode)
+              (flycheck-mode)
+              (turn-on-purescript-indentation))))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
