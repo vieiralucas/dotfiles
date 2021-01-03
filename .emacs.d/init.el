@@ -41,6 +41,11 @@
 (setq show-paren-delay 0)
 (show-paren-mode 1)
 
+(use-package undo-tree
+  :ensure t
+  :config
+  (global-undo-tree-mode))
+
 (use-package evil-leader
   :ensure t
   :config
@@ -51,9 +56,10 @@
 
 (use-package evil
   :ensure t
-  :after (evil-leader)
+  :after (evil-leader undo-tree)
   :config
-  (evil-mode 1))
+  (evil-mode 1)
+  (evil-set-undo-system 'undo-tree))
 
 (use-package editorconfig
   :ensure t
