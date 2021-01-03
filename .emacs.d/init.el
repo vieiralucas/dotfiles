@@ -51,12 +51,17 @@
   :config
   (global-undo-tree-mode))
 
+(use-package fzf
+  :ensure t)
+
 (use-package evil-leader
   :ensure t
   :config
   (evil-leader/set-leader ",")
   (evil-leader/set-key
     "f" 'format-all-buffer)
+  (evil-leader/set-key
+    "," 'fzf)
   (global-evil-leader-mode))
 
 (use-package evil
