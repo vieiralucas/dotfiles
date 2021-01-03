@@ -41,6 +41,11 @@
 (setq show-paren-delay 0)
 (show-paren-mode 1)
 
+(use-package xclip
+  :ensure t
+  :config
+  (xclip-mode 1))
+
 (use-package undo-tree
   :ensure t
   :config
