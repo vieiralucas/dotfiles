@@ -60,3 +60,5 @@ if [ -s "$HOME/.nvm/nvm.sh" ] && [ ! "$(typeset -f __init_nvm > /dev/null)" ]; t
   }
   for i in "${__node_commands[@]}"; do alias $i='__init_nvm && '$i; done
 fi
+
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
