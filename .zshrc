@@ -25,6 +25,10 @@ function gcm() {
   git checkout master
 }
 
+# java
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+export PATH=${PATH}:$JAVA_HOME/bin
+
 # android
 export ANDROID_HOME=/Users/$USER/Library/Android/sdk
 export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
