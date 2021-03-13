@@ -1,4 +1,4 @@
-export EDITOR=emacs
+export EDITOR=vi
 export TERM="screen-256color"
 export LANG=en_US.UTF-8
 

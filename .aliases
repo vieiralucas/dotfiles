@@ -8,4 +8,4 @@ alias gst="git status"
 alias gco="git checkout"
 alias glg="git log"
 alias gdub="git branch --merged | grep -v '\*' | xargs git branch -D"
-alias vi=emacs
+alias vi=nvim
