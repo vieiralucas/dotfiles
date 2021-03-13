@@ -2,6 +2,11 @@ export EDITOR=vi
 export TERM="screen-256color"
 export LANG=en_US.UTF-8
 
+# fix history size
+HISTSIZE=99999
+HISTFILESIZE=999999
+SAVEHIST=$HISTSIZE
+
 if [ -f $HOME/.aliases ]; then
   source $HOME/.aliases
 fi
