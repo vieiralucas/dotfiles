@@ -4,8 +4,16 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
 Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'chriskempson/base16-vim'
 
 call plug#end()
+
+" colorscheme
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
+syntax on
 
 let mapleader = ","
 
@@ -27,7 +35,6 @@ set updatetime=300
 set shortmess+=c
 set nolist
 set signcolumn=number
-syntax off
 
 highlight VertSplit cterm=NONE
 highlight LineNr ctermfg=NONE
