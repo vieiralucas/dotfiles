@@ -1,12 +1,12 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'neovim/nvim-lspconfig'
 Plug 'scrooloose/nerdtree'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'chriskempson/base16-vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'ojroques/nvim-lspfuzzy'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'simrat39/rust-tools.nvim'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 
 call plug#end()
 
@@ -51,17 +51,20 @@ vnoremap > >gv
 set backspace=indent,eol,start
 
 " disable arrowkeys
-noremap <Up> <NOP>
-noremap <Down> <NOP>
-noremap <Left> <NOP>
-noremap <Right> <NOP>
+noremap  <Up>    <NOP>
+noremap  <Down>  <NOP>
+noremap  <Left>  <NOP>
+noremap  <Right> <NOP>
 inoremap <Up>    <NOP>
 inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
-" fzf
-nnoremap <silent> <leader>, :Files<CR>
+" telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " nerdtree
 let NERDTreeShowHidden=1
@@ -74,9 +77,6 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
 lua << EOF
-local nvim_lsp = require('lspconfig')
-
-require('lspfuzzy').setup {}
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -108,18 +108,15 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
   buf_set_keymap('n', '<space>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { 'rust_analyzer', 'tsserver' }
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    }
+require('rust-tools').setup({
+  server = {
+    on_attach = on_attach
   }
-end
+})
+
+require('lspconfig').tsserver.setup({
+  on_attach = on_attach
+})
 EOF
