@@ -7,3 +7,5 @@
 	minRacyThreshold = 0 nanoseconds
 [pull]
 	rebase = true
+[init]
+	defaultBranch = main
