@@ -7,6 +7,11 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'simrat39/rust-tools.nvim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 
 call plug#end()
 
@@ -77,16 +82,18 @@ let g:prettier#exec_cmd_async = 1
 let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
+" nvim-cmp
+set completeopt=menu,menuone,noselect
+
 lua << EOF
+local lspconfig = require 'lspconfig'
+local util = require 'lspconfig/util'
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
-
-  -- Enable completion triggered by <c-x><c-o>
-  buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
@@ -111,13 +118,43 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
+local cmp = require 'cmp'
+cmp.setup({
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  }),
+  sources = cmp.config.sources(
+    {
+      { name = 'nvim_lsp' },
+    },
+    {
+      { name = 'buffer' },
+    }
+  )
+})
+
+local capabilities = require('cmp_nvim_lsp')
+  .update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+
 require('rust-tools').setup({
   server = {
-    on_attach = on_attach
+    on_attach = on_attach,
+    capabilities = capabilities
   }
 })
 
-require('lspconfig').tsserver.setup({
+lspconfig.tsserver.setup({
+  capabilities = capabilities,
   on_attach = on_attach
 })
+
 EOF
