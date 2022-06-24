@@ -153,6 +153,27 @@ require('rust-tools').setup({
 })
 
 lspconfig.tsserver.setup({
+  on_attach = on_attach,
+  capabilities = capabilities
+})
+
+lspconfig.gopls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"gopls", "serve"},
+  filetypes = {"go", "gomod"},
+  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+    },
+  },
+})
+
+lspconfig.pyright.setup({
   capabilities = capabilities,
   on_attach = on_attach
 })
