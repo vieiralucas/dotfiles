@@ -1,0 +1,13 @@
+alias c=clear
+alias e=exit
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lla="ll -a"
+alias g=git
+alias gst="git status"
+alias gco="git checkout"
+alias glg="git log"
+alias gdub="git branch --merged | grep -v '\*' | xargs git branch -D"
+alias vi=nvim
+alias lock="i3lock -c 000000"
