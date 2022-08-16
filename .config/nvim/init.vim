@@ -11,6 +11,7 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'williamboman/mason.nvim'
 
 call plug#end()
 
@@ -124,6 +125,7 @@ cmp.setup({
 local capabilities = require('cmp_nvim_lsp')
   .update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
+require('mason').setup()
 
 lspconfig.tsserver.setup({
   on_attach = on_attach,
