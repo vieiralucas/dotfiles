@@ -59,6 +59,14 @@ inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
+" telescope
+nnoremap <leader>fF <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope git_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>td <cmd>Telescope diagnostics<cr>
+
 " nvim-cmp
 set completeopt=menu,menuone,noselect
 
