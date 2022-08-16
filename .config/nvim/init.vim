@@ -5,7 +5,6 @@ Plug 'chriskempson/base16-vim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'simrat39/rust-tools.nvim'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
