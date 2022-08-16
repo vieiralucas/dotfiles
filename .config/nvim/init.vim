@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'chriskempson/base16-vim'
+Plug 'NLKNguyen/papercolor-theme'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -15,7 +15,7 @@ Plug 'williamboman/mason.nvim'
 
 call plug#end()
 
-syntax off
+syntax on
 
 let mapleader = ","
 
@@ -37,6 +37,10 @@ set updatetime=300
 set shortmess+=c
 set nolist
 set signcolumn=number
+
+set t_Co=256
+set background=light
+colorscheme PaperColor
 
 highlight VertSplit cterm=NONE
 highlight LineNr ctermfg=NONE
