@@ -135,3 +135,6 @@ export NVM_DIR="$HOME/.nvm"
 
 # dotnet
 export PATH="$PATH:$HOME/.dotnet"
+
+# rust
+. "$HOME/.cargo/env"
