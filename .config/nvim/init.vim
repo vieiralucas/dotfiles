@@ -64,6 +64,10 @@ inoremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 
+" nerdtree
+let NERDTreeShowHidden=1
+map <silent> <C-n> :NERDTreeToggle<CR>
+
 " telescope
 nnoremap <leader>fF <cmd>Telescope find_files<cr>
 nnoremap <leader>ff <cmd>Telescope git_files<cr>
