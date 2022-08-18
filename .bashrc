@@ -117,6 +117,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+set -o vi
+EDITOR=vi
+
 function gcm() {
   command git rev-parse --git-dir &>/dev/null || return
   local branch
