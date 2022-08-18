@@ -141,3 +141,6 @@ export PATH="$PATH:$HOME/.dotnet"
 
 # rust
 . "$HOME/.cargo/env"
+
+# haskell
+[ -f "$HOME/.ghcup/env" ] && source "$HOME/.ghcup/env" # ghcup-env
