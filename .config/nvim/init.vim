@@ -36,7 +36,7 @@ set cmdheight=2
 set updatetime=300
 set shortmess+=c
 set nolist
-set signcolumn=number
+set signcolumn=auto
 
 set t_Co=256
 set background=light
