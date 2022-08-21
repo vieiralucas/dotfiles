@@ -10,4 +10,3 @@ alias gco="git checkout"
 alias glg="git log"
 alias gdub="git branch --merged | grep -v '\*' | xargs git branch -D"
 alias vi=nvim
-alias lock="i3lock -c 000000"
