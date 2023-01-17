@@ -12,14 +12,10 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 call plug#end()
 
-" colorscheme
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-endif
 syntax on
 
 let mapleader = ","
@@ -88,6 +84,15 @@ let g:prettier#autoformat_config_present = 1
 set completeopt=menu,menuone,noselect
 
 lua << EOF
+require("catppuccin").setup({
+    flavour = "latte", -- latte, frappe, macchiato, mocha
+    background = { -- :h background
+        light = "latte",
+        dark = "mocha",
+    },
+})
+vim.cmd.colorscheme "catppuccin"
+
 local lspconfig = require 'lspconfig'
 local util = require 'lspconfig/util'
 
