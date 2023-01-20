@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'chriskempson/base16-vim'
+Plug 'RRethy/nvim-base16'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -12,10 +12,12 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
+Plug 'williamboman/mason.nvim'
+Plug 'nvim-lualine/lualine.nvim'
 
 call plug#end()
 
+colorscheme base16-one-light
 syntax on
 
 let mapleader = ","
@@ -84,14 +86,12 @@ let g:prettier#autoformat_config_present = 1
 set completeopt=menu,menuone,noselect
 
 lua << EOF
-require("catppuccin").setup({
-    flavour = "latte", -- latte, frappe, macchiato, mocha
-    background = { -- :h background
-        light = "latte",
-        dark = "mocha",
-    },
+require('lualine').setup({
+  options = {
+    icons_enabled = false,
+    theme = 'base16'
+  }
 })
-vim.cmd.colorscheme "catppuccin"
 
 local lspconfig = require 'lspconfig'
 local util = require 'lspconfig/util'
