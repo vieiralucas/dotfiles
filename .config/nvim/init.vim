@@ -93,6 +93,8 @@ require('lualine').setup({
   }
 })
 
+require('mason').setup()
+
 local lspconfig = require 'lspconfig'
 local util = require 'lspconfig/util'
 
@@ -176,6 +178,11 @@ lspconfig.gopls.setup({
 })
 
 lspconfig.pyright.setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+})
+
+lspconfig.terraformls.setup({
   capabilities = capabilities,
   on_attach = on_attach
 })
