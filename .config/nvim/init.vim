@@ -14,6 +14,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'williamboman/mason.nvim'
 Plug 'nvim-lualine/lualine.nvim'
+Plug 'j-hui/fidget.nvim'
 
 call plug#end()
 
@@ -186,5 +187,8 @@ lspconfig.terraformls.setup({
   capabilities = capabilities,
   on_attach = on_attach
 })
+
+
+require('fidget').setup({})
 
 EOF
