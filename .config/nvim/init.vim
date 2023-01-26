@@ -90,8 +90,9 @@ lua << EOF
 require('lualine').setup({
   options = {
     icons_enabled = false,
-    theme = 'base16'
-  }
+    theme = 'base16',
+    section_separators = { left = '', right = '' },
+  },
 })
 
 require('mason').setup()
