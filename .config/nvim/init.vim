@@ -1,7 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
-Plug 'RRethy/nvim-base16'
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
@@ -16,10 +15,14 @@ Plug 'williamboman/mason.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'j-hui/fidget.nvim'
 Plug 'zbirenbaum/copilot.lua'
+Plug 'rktjmp/lush.nvim'
+Plug 'mcchrish/zenbones.nvim'
 
 call plug#end()
 
-colorscheme base16-one-light
+set termguicolors
+set background=light
+colorscheme zenbones
 syntax on
 
 let mapleader = ","
@@ -91,7 +94,7 @@ lua << EOF
 require('lualine').setup({
   options = {
     icons_enabled = false,
-    theme = 'base16',
+    theme = 'zenbones',
     section_separators = { left = '', right = '' },
   },
 })
@@ -190,6 +193,7 @@ lspconfig.terraformls.setup({
   on_attach = on_attach
 })
 
+vim.lsp.set_log_level("off")
 
 require('fidget').setup({})
 
@@ -197,6 +201,13 @@ require('copilot').setup({
   suggestion = {
     auto_trigger = true
   }
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
 })
 
 EOF
