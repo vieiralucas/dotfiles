@@ -106,6 +106,8 @@ if [ -f $HOME/.aliases ]; then
   source $HOME/.aliases
 fi
 
+export PATH=${PATH}:$HOME/.local/bin
+
 # checkout to main branch
 function gcm() {
   command git rev-parse --git-dir &>/dev/null || return
@@ -120,7 +122,18 @@ function gcm() {
 }
 
 # java
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
+export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+export JAVA_17_HOME=$(/usr/libexec/java_home -v17)
+export JAVA_18_HOME=$(/usr/libexec/java_home -v18)
+export JAVA_19_HOME=$(/usr/libexec/java_home -v19)
+
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
+alias java17='export JAVA_HOME=$JAVA_17_HOME'
+alias java18='export JAVA_HOME=$JAVA_18_HOME'
+alias java19='export JAVA_HOME=$JAVA_19_HOME'
+
+#default java16
+export JAVA_HOME=$JAVA_17_HOME
 export PATH=${PATH}:$JAVA_HOME/bin
 
 # android
@@ -146,6 +159,9 @@ export PATH="/usr/local/sbin:$PATH"
 # rust
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
+# go
+export PATH=${PATH}:$HOME/go/bin
+
 # Base16 Shell
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
@@ -153,3 +169,10 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
         eval "$("$BASE16_SHELL/profile_helper.sh")"
 
 base16_one-light
+
+# bun completions
+[ -s "/Users/lucas/.bun/_bun" ] && source "/Users/lucas/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
