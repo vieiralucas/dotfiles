@@ -15,6 +15,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'williamboman/mason.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'j-hui/fidget.nvim'
+Plug 'zbirenbaum/copilot.lua'
 
 call plug#end()
 
@@ -191,5 +192,11 @@ lspconfig.terraformls.setup({
 
 
 require('fidget').setup({})
+
+require('copilot').setup({
+  suggestion = {
+    auto_trigger = true
+  }
+})
 
 EOF
