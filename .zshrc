@@ -8,7 +8,7 @@ export ZSH="/Users/lucas/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="yan"
+ZSH_THEME="yan-nohighlight"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -70,7 +70,7 @@ ZSH_THEME="yan"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git thefuck zsh-syntax-highlighting)
+# plugins=(git thefuck zsh-syntax-highlighting)
 
 
 eval $(thefuck --alias)
@@ -162,13 +162,13 @@ export PATH="/usr/local/sbin:$PATH"
 # go
 export PATH=${PATH}:$HOME/go/bin
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
-
-base16_one-light
+# # Base16 Shell
+# BASE16_SHELL="$HOME/.config/base16-shell/"
+# [ -n "$PS1" ] && \
+#     [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+#         eval "$("$BASE16_SHELL/profile_helper.sh")"
+# 
+# base16_one-light
 
 # bun completions
 [ -s "/Users/lucas/.bun/_bun" ] && source "/Users/lucas/.bun/_bun"
@@ -176,3 +176,16 @@ base16_one-light
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+
+# BEGIN opam configuration
+# This is useful if you're using opam as it adds:
+#   - the correct directories to the PATH
+#   - auto-completion for the opam binary
+# This section can be safely removed at any time if needed.
+[[ ! -r '/Users/lucas/.opam/opam-init/init.zsh' ]] || source '/Users/lucas/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
+# END opam configuration
