@@ -1,7 +1,7 @@
 vim.g.mapleader = ","
 
 -- Terminal and colorscheme settings
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 vim.opt.background = "light"
 
 -- Editor settings
@@ -23,9 +23,6 @@ vim.opt.updatetime = 300
 vim.opt.shortmess = vim.opt.shortmess + "c"
 vim.opt.list = false
 vim.opt.signcolumn = "number"
-
--- disable syntax highlighting
-vim.cmd("syntax off")
 
 -- Disable netrw
 vim.g.loaded_netrw = 1

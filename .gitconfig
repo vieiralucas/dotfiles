@@ -18,5 +18,3 @@
 	required = true
 [merge "ours"]
 	driver = true
-[color]
-	ui = false
