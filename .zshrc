@@ -9,7 +9,13 @@ zstyle ':vcs_info:git:*' check-for-changes true
 # Define colorized formats
 zstyle ':vcs_info:git:*' formats ' [%b]'
 
+precmd () {
+  vcs_info
+  PROMPT='%n@%m %~${vcs_info_msg_0_}
+> '
+}
 setopt prompt_subst
+vcs_info
 PROMPT='%n@%m %~${vcs_info_msg_0_}
 > '
 
@@ -99,6 +105,13 @@ export PATH=${PATH}:$HOME/go/bin
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/lucas/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/lucas/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/lucas/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/lucas/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
+
+
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
@@ -111,3 +124,8 @@ eval "$(pyenv init -)"
 # This section can be safely removed at any time if needed.
 [[ ! -r '/Users/lucas/.opam/opam-init/init.zsh' ]] || source '/Users/lucas/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
 # END opam configuration
+
+# LLVM
+export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
+export LDFLAGS="-L/opt/homebrew/opt/llvm/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"

@@ -43,6 +43,7 @@ return {
       -- Setup Mason LSP installer
       mason_lspconfig.setup({
         ensure_installed = vim.tbl_keys(servers),
+        automatic_enable = false,
       })
 
       for name, config in pairs(servers) do

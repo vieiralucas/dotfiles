@@ -1,0 +1,249 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'stevearc/dressing.nvim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'MeanderingProgrammer/render-markdown.nvim'
+Plug 'HakonHarnes/img-clip.nvim'
+
+Plug 'simrat39/rust-tools.nvim'
+Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'williamboman/mason.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'j-hui/fidget.nvim'
+Plug 'zbirenbaum/copilot.lua'
+Plug 'rktjmp/lush.nvim'
+Plug 'mcchrish/zenbones.nvim'
+Plug 'yetone/avante.nvim', { 'branch': 'main', 'do': 'make' }
+
+call plug#end()
+
+set termguicolors
+set background=light
+colorscheme zenbones
+syntax on
+
+let mapleader = ","
+
+set history=10000
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set number
+set relativenumber
+set clipboard=unnamed
+set nohlsearch
+set hidden
+set nobackup
+set nowritebackup
+set cmdheight=2
+set updatetime=300
+set shortmess+=c
+set nolist
+set signcolumn=number
+
+highlight VertSplit cterm=NONE
+highlight LineNr ctermfg=NONE
+highlight CursorLineNr ctermfg=NONE
+highlight TabLine ctermfg=NONE
+
+" move code blocks easier
+vnoremap < <gv
+vnoremap > >gv
+
+" make backspace behave in a sane manner
+set backspace=indent,eol,start
+
+" disable arrowkeys
+noremap  <Up>    <NOP>
+noremap  <Down>  <NOP>
+noremap  <Left>  <NOP>
+noremap  <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+
+" telescope
+nnoremap <leader>fF <cmd>Telescope find_files<cr>
+nnoremap <leader>ff <cmd>Telescope git_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>td <cmd>Telescope diagnostics<cr>
+
+" nerdtree
+let NERDTreeShowHidden=1
+map <silent> <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeNodeDelimiter = "\u00a0"
+
+" prettier
+let g:prettier#exec_cmd_async = 1
+let g:prettier#autoformat = 0
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat_config_present = 1
+" Disable Prettier for YAML files
+autocmd FileType yaml let g:prettier#autoformat = 0
+
+" nvim-cmp
+set completeopt=menu,menuone,noselect
+
+lua << EOF
+require('lualine').setup({
+  options = {
+    icons_enabled = false,
+    theme = 'zenbones',
+    section_separators = { left = '', right = '' },
+  },
+})
+
+require('mason').setup()
+
+local lspconfig = require 'lspconfig'
+local util = require 'lspconfig/util'
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+  local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+
+  -- Mappings.
+  local opts = { noremap=true, silent=true }
+
+  -- See `:help vim.lsp.*` for documentation on any of the below functions
+  buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+  buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+  buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+  buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+  buf_set_keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+  buf_set_keymap('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+  buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+  if client.supports_method("textDocument/formatting") then
+    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      group = augroup,
+      buffer = bufnr,
+      callback = function()
+        vim.lsp.buf.format()
+      end,
+    })
+  end
+end
+
+local cmp = require 'cmp'
+cmp.setup({
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<Tab>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+  }),
+  sources = cmp.config.sources(
+    {
+      { name = 'nvim_lsp' },
+    },
+    {
+      { name = 'buffer' },
+    }
+  )
+})
+
+local capabilities = require('cmp_nvim_lsp')
+  .default_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+
+require('rust-tools').setup({
+  server = {
+    on_attach = on_attach,
+    capabilities = capabilities
+  }
+})
+
+lspconfig.ts_ls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities
+})
+
+lspconfig.gopls.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  cmd = {"gopls", "serve"},
+  filetypes = {"go", "gomod"},
+  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+    },
+  },
+})
+
+lspconfig.pyright.setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+})
+
+lspconfig.terraformls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+})
+
+lspconfig.sqlls.setup({
+  capabilities = capabilities,
+  on_attach = on_attach
+})
+
+lspconfig.ocamllsp.setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
+require('fidget').setup({})
+
+require('copilot').setup({
+  suggestion = {
+    enabled = true,
+    auto_trigger = true,
+  }
+})
+
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    client.server_capabilities.semanticTokensProvider = nil
+  end,
+})
+
+require("img-clip").setup({})
+
+require("avante").setup({
+  provider = "copilot",
+})
+
+EOF
