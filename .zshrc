@@ -62,18 +62,16 @@ function gcm() {
 }
 
 # java
-export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 export JAVA_17_HOME=$(/usr/libexec/java_home -v17)
-export JAVA_18_HOME=$(/usr/libexec/java_home -v18)
-export JAVA_19_HOME=$(/usr/libexec/java_home -v19)
+export JAVA_21_HOME=$(/usr/libexec/java_home -v21)
+export JAVA_24_HOME=$(/usr/libexec/java_home -v24)
 
-alias java11='export JAVA_HOME=$JAVA_11_HOME'
 alias java17='export JAVA_HOME=$JAVA_17_HOME'
 alias java18='export JAVA_HOME=$JAVA_18_HOME'
 alias java19='export JAVA_HOME=$JAVA_19_HOME'
 
 #default java16
-export JAVA_HOME=$JAVA_17_HOME
+export JAVA_HOME=$JAVA_24_HOME
 export PATH=${PATH}:$JAVA_HOME/bin
 
 # android
