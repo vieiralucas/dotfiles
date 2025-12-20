@@ -77,7 +77,16 @@ return {
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
       vim.keymap.set("n", "<leader>f", function()
-        vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
+        local diagnostics = vim.diagnostic.get()
+        vim.lsp.buf.code_action({
+          context = {
+            only = {
+              "source.organizeImports"
+            },
+            diagnostics = diagnostics,
+          },
+          apply = true,
+        })
         vim.lsp.buf.format()
       end, { desc = "Format & organize imports" })
 
