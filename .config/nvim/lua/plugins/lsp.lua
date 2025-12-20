@@ -76,7 +76,10 @@ return {
       vim.keymap.set("n", "K", vim.lsp.buf.hover, { desc = "Hover documentation" })
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
       vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "Rename" })
-      vim.keymap.set("n", "<leader>f", vim.lsp.buf.format, { desc = "Format" })
+      vim.keymap.set("n", "<leader>f", function()
+        vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
+        vim.lsp.buf.format()
+      end, { desc = "Format & organize imports" })
 
       -- Show diagnostics in a floating window
       vim.diagnostic.config({
