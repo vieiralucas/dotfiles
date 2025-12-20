@@ -30,7 +30,7 @@ return {
         rust_analyzer = {},
         gopls = {},
         pyright = {},
-        ts_ls = {},
+        ts_ls = {}, --
         html = {},
         cssls = {},
         jsonls = {},
@@ -38,6 +38,7 @@ return {
         clangd = {},
         ocamllsp = {},
         terraformls = {},
+        zls = {}, -- zig
       }
 
       -- Setup Mason LSP installer
