@@ -19,7 +19,6 @@ return {
       },
     },
     config = function()
-      local lspconfig = require("lspconfig")
       local mason_lspconfig = require("mason-lspconfig")
 
       -- Setup Mason
@@ -30,7 +29,7 @@ return {
         rust_analyzer = {},
         gopls = {},
         pyright = {},
-        ts_ls = {}, --
+        ts_ls = {},
         html = {},
         cssls = {},
         jsonls = {},
@@ -48,11 +47,12 @@ return {
       })
 
       for name, config in pairs(servers) do
-        lspconfig[name].setup(config)
+        vim.lsp.config(name, config)
+        vim.lsp.enable(name)
       end
 
       -- Configure Lua LSP
-      lspconfig.lua_ls.setup({
+      vim.lsp.config.lua_ls({
         settings = {
           Lua = {
             workspace = {
@@ -68,6 +68,7 @@ return {
           },
         },
       })
+      vim.lsp.enable("lua_ls")
 
       -- Keymaps for LSP
       vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
